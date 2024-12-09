@@ -1,0 +1,4 @@
+*
+!.gitignore
+!all*.min.css
+!all*.min.js

@@ -1,0 +1,141 @@
+AddDefaultCharset UTF-8
+
+Options +FollowSymLinks
+DirectoryIndex index.php index.html
+RewriteEngine on
+
+# strip empty $_GET parameter
+RewriteCond %{THE_REQUEST} "^\S+ /[^?]*\? "
+RewriteRule .* /$0? [R=301,L]
+
+RewriteRule /\. - [L,F]
+
+# define the app environment variable
+RewriteCond %{REQUEST_URI} !^/((frontend|backend)/web|admin)
+RewriteRule ^ - [E=APP:frontend]
+RewriteCond %{REQUEST_URI} (?!^/backend/web)^/admin
+RewriteRule ^ - [E=APP:backend]
+
+# rewrite the URI of the frontend app
+RewriteCond %{ENV:APP} =frontend
+RewriteRule ^ frontend/web%{REQUEST_URI}
+# if a directory or a file exists, use the request directly
+RewriteCond %{ENV:APP} =frontend
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward the request to index.php
+RewriteRule ^ frontend/web/index.php [L]
+
+# redirect to the URL without a trailing slash (uncomment if necessary)
+#RewriteRule ^admin/$ /admin [L,R=301]
+
+# rewrite the URI of the backend app
+RewriteCond %{ENV:APP} =backend
+RewriteRule ^admin/?(.*)$ backend/web/$1
+# if a directory or a file exists, use the request directly
+RewriteCond %{ENV:APP} =backend
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward the request to index.php
+RewriteRule ^ backend/web/index.php [L]
+
+# handle a directory trailing slash, redirect to the initial URI instead the rewritten one
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [L,R=301]
+
+# GZIP
+<ifModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html 
+AddOutputFilterByType DEFLATE text/css 
+AddOutputFilterByType DEFLATE text/javascript 
+AddOutputFilterByType DEFLATE application/javascript 
+AddOutputFilterByType DEFLATE application/xml
+</ifModule>
+
+# HTTP кэширование у клиента
+<ifModule mod_headers.c>
+    #кэшировать css, javascript и текстовые файлы на одну неделю
+    <FilesMatch "\.(js|css|txt|ttf|woff2)$">
+        Header set Cache-Control "max-age=31536000"
+    </FilesMatch>
+    #кэшировать флэш и изображения на месяц
+    <FilesMatch "\.(flv|swf|ico|gif|jpg|jpeg|png|webp|svg|woff2)$">
+        Header set Cache-Control "max-age=31536000"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+
+    ExpiresActive on
+    ExpiresDefault                                      "access plus 1 month"
+
+  # CSS
+    ExpiresByType text/css                              "access plus 1 year"
+
+  # Data interchange
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rdf+xml                   "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/ld+json                   "access plus 0 seconds"
+    ExpiresByType application/schema+json               "access plus 0 seconds"
+    ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+  # Favicon (cannot be renamed!) and cursor images
+    ExpiresByType image/vnd.microsoft.icon              "access plus 1 week"
+    ExpiresByType image/x-icon                          "access plus 1 week"
+
+  # HTML
+    ExpiresByType text/html                             "access plus 0 seconds"
+
+  # JavaScript
+    ExpiresByType application/javascript                "access plus 1 year"
+    ExpiresByType application/x-javascript              "access plus 1 year"
+    ExpiresByType text/javascript                       "access plus 1 year"
+
+  # Manifest files
+    ExpiresByType application/manifest+json             "access plus 1 year"
+
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+  # Media files
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType image/bmp                             "access plus 1 month"
+    ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpeg                            "access plus 1 month"
+    ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
+    ExpiresByType image/webp                            "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
+
+  # Web fonts
+
+    # Embedded OpenType (EOT)
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+    ExpiresByType font/eot                              "access plus 1 month"
+
+    # OpenType
+    ExpiresByType font/opentype                         "access plus 1 month"
+
+    # TrueType
+    ExpiresByType application/x-font-ttf                "access plus 1 month"
+
+    # Web Open Font Format (WOFF) 1.0
+    ExpiresByType application/font-woff                 "access plus 1 month"
+    ExpiresByType application/x-font-woff               "access plus 1 month"
+    ExpiresByType font/woff                             "access plus 1 month"
+
+    # Web Open Font Format (WOFF) 2.0
+    ExpiresByType application/font-woff2                "access plus 1 month"
+
+  # Other
+    ExpiresByType text/x-cross-domain-policy            "access plus 1 month"
+
+</IfModule>
+

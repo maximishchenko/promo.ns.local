@@ -1,0 +1,73 @@
+/* Colors */
+// @main-bg-color-light: rgb(219, 219, 219);
+@main-bg-color-dark: #1e293c;
+
+/* Breakpoints */
+// @breakpoint-large: 1280px;
+// @breakpoint-medium: 1024px;
+// @breakpoint-small: 768px;
+// @breakpoint-mobile: 425px;
+
+/* Blocks */
+@import "header.less";
+@import "apartments-list.less";
+
+
+.mar_2_4_top {
+  margin-top: 2rem;
+}
+.old__price {
+  color: #878787;
+  position: relative;
+}
+.old__price::after {
+  height: 2px;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+  content: "";
+  background: #d83737;
+}
+
+.h2title{
+  margin-top: 80px;
+}
+
+.pagination__item.pagination__item.pagination__item--active a {
+  color: #fff;
+}
+.pagination__item a {
+  color: #1e293c;
+}
+.pagination__item:hover a {
+  color: #fff;
+}
+
+.hidden__input {
+  visibility: hidden;
+  display: none;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 100%;
+  max-width: 1220px;
+  
+  &--big {
+    max-width: 1400px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  
+.mar_2_4_top {
+  margin-top: 4rem;
+}
+}

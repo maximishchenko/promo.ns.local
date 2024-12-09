@@ -1,0 +1,190 @@
+.apartments-list {
+  @label-width: 60px;
+  @item-height: 90px;
+  @free-color: #fff;
+  @sold-color: #777;
+  @reserved-color: #c3c3c3;
+  @selected-color: #122248;
+
+  width: fit-content;
+  display: grid;
+  gap: 10px;
+  font-size: 14px;
+
+  &-wraper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px 80px;
+  }
+
+  &__label, &__item {
+    border: 1px solid black;
+    border-radius: 10px;
+    height: @item-height;
+
+  }
+  
+  &__label {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    box-sizing: border-box;
+    font-weight: 600;
+    width: @label-width;
+    white-space: nowrap;
+
+  }
+  
+  &__item {
+    background-color: @free-color;
+    padding: 5px;
+    box-sizing: border-box;
+
+    &--sold {
+      background-color: @sold-color;
+      color: white;
+    }
+
+    &--reserved {
+      background-color: @reserved-color;
+      color: white;
+    }
+
+    &--selected {
+      background-color: @selected-color;
+      color: white;
+    }
+
+    &--commercial{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__title {
+      font-weight: 600;
+      text-align: center;
+
+    }
+
+    &__content {
+      text-align: center;
+    }
+
+    & a {
+      color: unset;
+    }
+  }  
+
+  &-legend {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+
+    &__item {
+      width: fit-content;
+
+      &__color {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        border: .5px solid black;
+
+        &--free {
+          background-color: @free-color;
+        }
+
+        &--sold {
+          background-color: @sold-color;
+        }
+
+        &--reserved {
+          background-color: @reserved-color;
+        }
+    
+        &--selected {
+          background-color: @selected-color;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+    font-size: 12px;
+    
+    &__label {
+      height: @item-height;
+    }
+
+    &__item {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: @item-height;
+      
+      &:hover &__content {
+        visibility: visible;
+      }
+      
+      &__title {
+        width: fit-content;
+        
+        & .apartment-name {
+          display: none;
+        }
+      }
+      
+      &__content {
+        position: absolute;
+        top: 100%;
+        z-index: 2;
+        visibility: hidden;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: @main-bg-color-dark;
+        color: white;
+        border-radius: 5px;
+        box-shadow: 0 0 3px black;
+        padding: 5px;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 0;
+          height: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-bottom: 5px solid @main-bg-color-dark;
+          visibility: inherit;
+          position: absolute;
+          top: -5px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    
+    &__label, &__item {
+      height: 35px;
+    }
+  }
+}
+
+.apartment-area {
+
+  &:before {
+    content: "Площадь ";
+  }
+
+  &:after {
+    content: " м2";
+  }
+}

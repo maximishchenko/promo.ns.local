@@ -1,0 +1,223 @@
+<?php
+
+use common\models\Status;
+
+$time = time();
+$banks = [];
+$banks[1] = [
+    'id' => 1,
+    'name' => 'Сбер',
+    'image' => null,
+    'comment' => null,
+    'sort' => 1,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[2] = [
+    'id' => 2,
+    'name' => 'ВТБ',
+    'image' => null,
+    'comment' => null,
+    'sort' => 2,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[3] = [
+    'id' => 3,
+    'name' => 'Центр-инвест',
+    'image' => null,
+    'comment' => null,
+    'sort' => 3,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[4] = [
+    'id' => 4,
+    'name' => 'Газпромбанк',
+    'image' => null,
+    'comment' => null,
+    'sort' => 4,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[5] = [
+    'id' => 5,
+    'name' => 'Дом РФ',
+    'image' => null,
+    'comment' => null,
+    'sort' => 5,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[6] = [
+    'id' => 6,
+    'name' => 'Россельхозбанк',
+    'image' => null,
+    'comment' => null,
+    'sort' => 6,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[7] = [
+    'id' => 7,
+    'name' => 'Открытие',
+    'image' => null,
+    'comment' => null,
+    'sort' => 7,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[8] = [
+    'id' => 8,
+    'name' => 'Уралсиб',
+    'image' => null,
+    'comment' => null,
+    'sort' => 8,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[9] = [
+    'id' => 9,
+    'name' => 'РНКБ',
+    'image' => null,
+    'comment' => null,
+    'sort' => 9,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[9] = [
+    'id' => 9,
+    'name' => 'Возрождение',
+    'image' => null,
+    'comment' => null,
+    'sort' => 9,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[10] = [
+    'id' => 10,
+    'name' => 'Альфа-банк',
+    'image' => null,
+    'comment' => null,
+    'sort' => 10,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[11] = [
+    'id' => 11,
+    'name' => 'Райффайзен банк',
+    'image' => null,
+    'comment' => null,
+    'sort' => 11,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[12] = [
+    'id' => 12,
+    'name' => 'Росбанк',
+    'image' => null,
+    'comment' => null,
+    'sort' => 12,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[13] = [
+    'id' => 13,
+    'name' => 'ПСБ',
+    'image' => null,
+    'comment' => null,
+    'sort' => 13,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[14] = [
+    'id' => 14,
+    'name' => 'Совкомбанк',
+    'image' => null,
+    'comment' => null,
+    'sort' => 14,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[15] = [
+    'id' => 15,
+    'name' => 'Абсолют Банк',
+    'image' => null,
+    'comment' => null,
+    'sort' => 15,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[16] = [
+    'id' => 16,
+    'name' => 'Московский индустриальный банк',
+    'image' => null,
+    'comment' => null,
+    'sort' => 16,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+$banks[17] = [
+    'id' => 17,
+    'name' => 'Банк Зенит',
+    'image' => null,
+    'comment' => null,
+    'sort' => 17,
+    'status' => Status::STATUS_ACTIVE,
+    'created_at' => time(),
+    'updated_at' => time(),
+    'created_by' => null,
+    'updated_by' => null,
+];
+return $banks;
