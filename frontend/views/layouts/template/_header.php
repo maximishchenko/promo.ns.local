@@ -29,7 +29,7 @@ use yii\helpers\Html;
             </nav>
         </div>
         <a href="<?= Yii::$app->homeUrl; ?>" class="header__logo">
-            <?= Html::img('/static/sprite.svg#logo', ['class' => 'header__logo__img']); ?>
+            <?= Html::img('/static/logo.png', ['class' => 'header__logo__img']); ?>
             <!-- <div class="header__logo__text">Новый Город</div> -->
         </a>
         <div class="header__right">
