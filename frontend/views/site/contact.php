@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 // $this->title = 'Контакты';
 // $this->params['breadcrumbs'][] = $this->title;
+// /static/logo.png
 ?>
 
 <script src="https://api-maps.yandex.ru/2.1/?apikey=<?= Yii::$app->configManager->getItemValue('mapApiKey'); ?>&lang=ru_RU" type="text/javascript"></script>
@@ -32,7 +33,8 @@ use yii\helpers\Html;
             {
                 overlayFactory: 'default#interactiveGraphics',
                 iconLayout: 'default#image',
-                iconImageHref: '/static/sprite.svg#logo',
+                // iconImageHref: '/static/sprite.svg#logo',
+                iconImageHref: '/static/logo.png',
                 iconImageSize: [60, 60],
                 iconImageOffset: [-30, -70],
                 iconCaption: map_title

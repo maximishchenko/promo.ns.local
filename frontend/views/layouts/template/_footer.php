@@ -30,7 +30,7 @@ use yii\helpers\Html;
         <div class="footer__menu">
           <div class="footer__links">
             <div class="footer__links-col">
-              <div class="footer__links-title">ООО "Новострой"</div>
+              <div class="footer__links-title">СЗ "Новострой"</div>
               <div class="footer__links-items">
                 <?= Html::a('Квартиры', "#flats_block", ['class' => 'footer__links-item']); ?>
                 <?= Html::a('Контакты', "#contacts_block", ['class' => 'footer__links-item']); ?>
@@ -45,7 +45,7 @@ use yii\helpers\Html;
   </div>
     <div class="footer__bottom">
         <div class="container">
-            <div class="footer__copyright">&copy; <?= date('Y'); ?> ООО "Новострой"</div>
+            <div class="footer__copyright">&copy; <?= date('Y'); ?> СЗ "Новострой"</div>
             <?= Html::a('Политика конфиденциальности', ['/policy'], ['class' => 'footer__bottom-link']); ?>
         </div>
     </div>

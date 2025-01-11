@@ -2,8 +2,8 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Объекты группы компаний';
-$this->params['breadcrumbs'][] = $this->title;
+// $this->title = 'Объекты группы компаний';
+// $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <style>
@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="container" id="projects_block">
   <h1>
-    <?= $this->title; ?>
+  Объекты группы компаний
   </h1>
     <div class="shares__wrap">
 

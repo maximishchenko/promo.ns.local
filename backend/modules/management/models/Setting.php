@@ -42,10 +42,10 @@ class Setting extends \yii\base\Model
                 'seo_keywords', 'seo_description',
             ],
             self::TAB_GLOBAL => [
-                'is_website_offline', 'report_email', 'location', 'mapApiKey', 'anotherProjectsUrl'
+                'is_website_offline', 'report_email', 'location', 'mapApiKey'
             ],
             self::TAB_CONTENT => [
-                'main_stage', 'main_stage_max_items_count', 'catalog_items_per_page', 'parking_stage', 'storage_stage', 'commercial_stage'
+                'main_stage', 'main_stage_max_items_count'
             ],
         ];
     }
