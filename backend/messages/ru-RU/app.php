@@ -313,4 +313,10 @@ return [
     'Gallery House ID' => 'Литер',
     'Image block' => 'Загрузка изображений',
     'House Image' => 'Изображение дома',
+    'Projects' => 'Другие проекты',
+    'Projects Edit' => 'Управление разделом "Другие проекты"',
+    'Projects Image' => 'Изображение проекта',
+    'Project Name Hint' => 'Наименование проекта',
+    'Project imageFile Hint {extensions}' => 'Изображение проекта {extensions}',
+    'Projects Url Hint' => 'Ссылка на раздел проекта'
 ];

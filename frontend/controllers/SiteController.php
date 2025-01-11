@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use frontend\modules\content\models\Projects;
 use frontend\modules\catalog\models\Apartment;
 use frontend\modules\catalog\models\Layout;
 use frontend\modules\content\models\Gallery;
@@ -20,14 +21,17 @@ class SiteController extends BaseController
         $stageModel = new Stage();
         $apartmentModel = new Apartment();
         $layoutModel = new Layout();
-        $offers = new Offer();
-        $galleries = Gallery::find()->active()->all();
+        
+        $projects = Projects::find()->active()->all();
+        // $offers = new Offer();
+        // $galleries = Gallery::find()->active()->all();
         return $this->render('index', [
-            'offers' => $offers, 
-            'galleries' => $galleries, 
+            // 'offers' => $offers, 
+            // 'galleries' => $galleries, 
             'stage' => $stageModel->getStage(), 
             'apartmentModel' => $apartmentModel,
             'layoutModel' => $layoutModel,
+            'projects' => $projects,
         ]);
     }
 

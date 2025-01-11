@@ -27,6 +27,16 @@ use yii\helpers\Url;
             ]) ?>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <?= SmallBox::widget([
+                'title' => Yii::t('app', 'Projects'),
+                'text' => Yii::t('app', 'Projects Edit'),
+                'icon' => 'fa fa-file',
+                'theme' => 'warning',
+                'linkText' => Yii::t('app', 'GO_LINK'),
+                'linkUrl' => Url::to(['/content/projects'])
+            ]) ?>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
             <?php SmallBox::widget([
                 'title' => Yii::t('app', 'Offer'),
                 'text' => Yii::t('app', 'Offer Edit'),

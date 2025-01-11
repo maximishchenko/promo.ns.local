@@ -109,4 +109,6 @@ $this->title = 'Новострой';
 
 <?= $this->render('contact', []); ?>
 
+<?= $this->render('projects', ['projects' => $projects]); ?>
+
 <?= $this->render('//layouts/template/form/_inline', ['title' => 'Поможем в выборе']); ?>
